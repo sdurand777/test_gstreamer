@@ -1,0 +1,1 @@
+gst-launch-1.0 multifilesrc location="left/image_%d.JPG" index=0 loop=true caps="image/jpeg,framerate=20/1" ! jpegdec ! videoconvert ! videoscale ! video/x-raw,width=400,height=400 ! x264enc ! rtph264pay ! udpsink host=127.0.0.1 port=5000
